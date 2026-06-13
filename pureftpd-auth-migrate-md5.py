@@ -131,7 +131,8 @@ try:
             ok = verify_crypt(password, stored)
 
         else:
-            # átmeneti cleartext támogatás, ha ilyen sor is van a DB-ben
+            # Transitional cleartext support.
+            # Remove this branch if you do not want cleartext passwords accepted.
             ok = secrets.compare_digest(password, stored)
             should_migrate = ok
 
